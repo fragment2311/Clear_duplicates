@@ -1,0 +1,26 @@
+[project]
+name = "dupes"
+version = "0.0.1"
+description = "CLI-инструмент для поиска дубликатов файлов"
+requires-python = ">=3.12"
+dependencies = []
+
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[tool.ruff]
+target-version= "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP"]
+# E — ошибки pycodestyle
+# F — ошибки Pyflakes (логика)
+# I — сортировка импортов (isort)
+# W — предупреждения pycodestyle
+# UP — обновления синтаксиса (pyupgrade)
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
