@@ -6,7 +6,7 @@ from collections import defaultdict
 from pathlib import Path
 
 folder_path = Path()
-folder_delete = Path('C:\\Users\\адм\\Desktop\\sensory_profile_app\\test_data\\for del')
+
 file_names = []
 hash_files = {}
 # for file_name in os.listdir(folder_path):
@@ -21,6 +21,8 @@ parser.add_argument('--action',
                         default='dry-run')
 
 args = parser.parse_args()
+    
+folder_delete = args.path / 'for del'    
     
 def main():
     
@@ -120,10 +122,10 @@ def move_duplicates_in_folder(duplicates):
     print('------------------------------')
     print('Содержимое папки для удаления')
     print('------------------------------')
-    dupl = find_duplicates(hash_files)
+    #dupl = find_duplicates(hash_files)
         
 
-    for file_hash, files in dupl:
+    for file_hash, files in duplicates:
         print('------------------------------')
         print("перемещен в папку 'for del'")
         newest_file = max(files, key = lambda f: f.stat().st_mtime)
